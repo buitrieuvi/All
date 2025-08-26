@@ -1,20 +1,25 @@
 using DG.Tweening;
 using UnityEngine;
 using Zenject;
-
 [RequireComponent(typeof(CanvasGroup))]
 public abstract class PanelBase : MonoBehaviour
 {
-    //[Inject] private PanelManager _panelManager;
-
     private CanvasGroup _canvasGroup;
     private float _openAnimationDuration = 0.4f;
     private float _closeAnimationDuration = 0.3f;
 
+    [Inject] public PanelManager PanelManager;
+    [Inject] public InputController Input;
 
-    private void Awake()
+    public virtual void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
+
+    }
+
+    public virtual void Start()
+    {
+
     }
 
     public virtual void Open()
@@ -24,7 +29,7 @@ public abstract class PanelBase : MonoBehaviour
         _canvasGroup.alpha = 0f;
         _canvasGroup.interactable = false;
         _canvasGroup.DOFade(1f, _openAnimationDuration)
-            .OnComplete(() => _canvasGroup.interactable = true);
+            .OnComplete(OnCompleted);
     }
 
     public virtual void Close()
@@ -33,6 +38,12 @@ public abstract class PanelBase : MonoBehaviour
         _canvasGroup.DOFade(0f, _closeAnimationDuration)
             .OnComplete(OnCloseCompleted);
     }
+
+    public virtual void OnCompleted() 
+    {
+        _canvasGroup.interactable = true;
+    }
+
     protected virtual void OnCloseCompleted()
     {
         gameObject.SetActive(false);

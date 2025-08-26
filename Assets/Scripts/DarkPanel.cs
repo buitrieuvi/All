@@ -40,10 +40,11 @@ public class DarkPanel : MonoBehaviour
         await FadeOut();
     }
 
-    public async void Transition(Action callBack)
+    public async UniTask Transition(Action callBack)
     {
         await FadeIn();
         callBack?.Invoke();
+        await UniTask.WaitForSeconds(0.25f);
         await FadeOut();
     }
 }
