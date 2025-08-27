@@ -23,7 +23,7 @@ public class InventoryPanel : PanelBase
 
         _slots = new List<InventorySlot>();
 
-        for (int i = 0; i < 11 * 5; i++)
+        for (int i = 0; i < 8 * 5; i++)
         {
             InventorySlot slot = Instantiate(_prefabs, _scroll.content.transform);
             _slots.Add(slot);
