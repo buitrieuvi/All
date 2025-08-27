@@ -916,11 +916,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c1a8d8356b46f49b4b6dbe91c450dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanelManager: {fileID: 0}
+  _btnClose: {fileID: 5543272794854600088}
   _scroll: {fileID: 6089207877214784437}
   _prefabs: {fileID: 2890529125677156692, guid: f57fa4016e497374fa9b34443da894d4, type: 3}
   _slots: []
-  _btnClose: {fileID: 5543272794854600088}
 --- !u!1 &7130877770078763605
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,17 +984,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 25
+    m_Left: 50
     m_Right: 0
     m_Top: 20
     m_Bottom: 20
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 120}
+  m_CellSize: {x: 120, y: 140}
   m_Spacing: {x: 20, y: 20}
   m_Constraint: 1
-  m_ConstraintCount: 11
+  m_ConstraintCount: 9
 --- !u!1 &7195637589278438626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,8 +1318,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 120336118915762011}
   m_HandleRect: {fileID: 8188130934120661724}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.71929824
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1379,8 +1378,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: 1340, y: 720}
+  m_AnchoredPosition: {x: 40, y: -4.5702}
+  m_SizeDelta: {x: 1340, y: 820}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7950884717548207051
 CanvasRenderer:

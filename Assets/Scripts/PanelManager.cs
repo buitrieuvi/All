@@ -5,38 +5,36 @@ using Zenject;
 
 public class PanelManager : MonoBehaviour
 {
-    [Inject] private InputController _inputCtrl;
     [Inject] private DarkPanel _darkPanel;
     [Inject] private GameDataController _gameData;
-
+    [Inject] private InputController _input;
     [Inject] private DiContainer _container;
 
     private bool _isLoading = false;
 
     public void Awake()
     {
-        _inputCtrl.InputActions.Player.Inventory.performed += ctx =>
+        _input.InputActions.Player.Inventory.started += ctx =>
         {
-            OnInputAction<InventoryPanel>();
+            OnInputAction(_gameData.Panels.FirstOrDefault(x => x is InventoryPanel));
         };
     }
 
-    public async void OnInputAction<T>() where T : PanelBase
+    public async void OnInputAction(PanelBase pnPrefab)
     {
         if (_isLoading) return;
         _isLoading = true;
-        await _darkPanel.Transition(OpenPanel<T>);
+        await _darkPanel.Transition(() => OpenPanel(pnPrefab));
         _isLoading = false;
     }
 
-    public void OpenPanel<T>() where T : PanelBase
+    public void OpenPanel(PanelBase pnPrefab)
     {
-        var hie = transform.GetComponentInChildren<T>(true);
+        var hie = transform.GetComponentInChildren<PanelBase>(true);
 
         if (hie == null)
         {
-            var prefab = _gameData.Panels.FirstOrDefault(x => x is T).gameObject;
-            var panel = _container.InstantiatePrefab(prefab, transform).GetComponent<T>();
+            var panel = _container.InstantiatePrefabForComponent<PanelBase>(pnPrefab.gameObject, transform);
             panel.Open();
         }
         else
