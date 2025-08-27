@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class InputController
 {
@@ -10,6 +11,5 @@ public class InputController
     {
         InputActions = new InputSystem_Actions();
         InputActions.Enable();
-        Debug.Log("InputController initialized and InputActions enabled.");
     }
 }

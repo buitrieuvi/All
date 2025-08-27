@@ -8,18 +8,27 @@ public abstract class PanelBase : MonoBehaviour
     private float _openAnimationDuration = 0.4f;
     private float _closeAnimationDuration = 0.3f;
 
-    [Inject] public PanelManager PanelManager;
-    [Inject] public InputController Input;
+    [Inject] protected InputController InputCtrl;
+    [Inject] protected PanelManager PanelMg;
+
+    [SerializeField] private ButtonBase _btnClose;
 
     public virtual void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
 
+
     }
 
     public virtual void Start()
     {
-
+        if (_btnClose != null)
+        {
+            _btnClose.Button.onClick.AddListener(() =>
+            {
+                PanelMg.OnInputAction(this);
+            });
+        }
     }
 
     public virtual void Open()

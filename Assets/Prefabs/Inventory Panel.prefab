@@ -916,11 +916,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c1a8d8356b46f49b4b6dbe91c450dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PanelManager: {fileID: 0}
+  _btnClose: {fileID: 5543272794854600088}
   _scroll: {fileID: 6089207877214784437}
   _prefabs: {fileID: 2890529125677156692, guid: f57fa4016e497374fa9b34443da894d4, type: 3}
   _slots: []
-  _btnClose: {fileID: 5543272794854600088}
 --- !u!1 &7130877770078763605
 GameObject:
   m_ObjectHideFlags: 0
