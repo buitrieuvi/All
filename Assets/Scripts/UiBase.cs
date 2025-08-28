@@ -27,20 +27,28 @@ public abstract class UiBase : MonoBehaviour,
         }
 
         PointerClick();
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        PointerEnter();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        
+        PointerExit();
     }
 
     public virtual void PointerClick() 
+    {
+
+    }
+
+    public virtual void PointerEnter()
+    {
+        
+    }
+    public virtual void PointerExit()
     {
 
     }
