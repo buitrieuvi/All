@@ -1,0 +1,9 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@hostname = https://localhost:5174
+POST https://{{hostname}}/register
+Content-Type: application/json
+{ 
+  "username": "Akebi", 
+  "Password": "Akebi"
+} 

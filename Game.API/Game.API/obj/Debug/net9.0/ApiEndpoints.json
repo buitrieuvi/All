@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "Game.API.Controllers.PlayerController",
+    "Method": "GetPlayer",
+    "RelativePath": "api/Player/getplayer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Game.API.Controllers.PlayerController",
+    "Method": "ReplacePlayer",
+    "RelativePath": "api/Player/replaceplayer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newPlayer",
+        "Type": "Game.Player",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

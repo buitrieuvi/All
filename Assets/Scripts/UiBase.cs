@@ -48,6 +48,7 @@ public abstract class UiBase : MonoBehaviour,
     {
         
     }
+
     public virtual void PointerExit()
     {
 

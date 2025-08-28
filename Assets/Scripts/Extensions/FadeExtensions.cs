@@ -54,12 +54,4 @@ public static class FadeExtensions
         foreach (Transform child in obj.transform)
             DOFade(child.gameObject, alpha, duration, delay);
     }
-
-    // 2
-
-    public static void DOScaleLoop(this RectTransform rtf)
-    {
-        rtf.DOKill();
-        rtf.DOScale(1.05f, 0.5f).SetLoops(-1, LoopType.Yoyo).OnKill(() => { rtf.DOScale(1f, 0.25f); });
-    }
 }

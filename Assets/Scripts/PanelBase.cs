@@ -11,7 +11,7 @@ public abstract class PanelBase : MonoBehaviour
     [Inject] protected InputController InputCtrl;
     [Inject] protected PanelManager PanelMg;
 
-    [SerializeField] private ButtonBase _btnClose;
+    [SerializeField] private InventoryButtonClosePanel _btnClose;
 
     public virtual void Awake()
     {
